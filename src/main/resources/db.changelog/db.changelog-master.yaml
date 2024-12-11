@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/create_user.sql
+  - include:
+      file: db/changelog/create_pet.sql
+  - include:
+      file: db/changelog/create_room.sql
+  - include:
+      file: db/changelog/create_booking.sql
+  - include:
+      file: db/changelog/create_order.sql

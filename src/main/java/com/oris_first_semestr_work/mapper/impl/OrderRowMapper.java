@@ -18,7 +18,7 @@ public class OrderRowMapper implements RowMapper<Order> {
                     Order.builder()
                             .id(resultSet.getInt("id"))
                             .date(resultSet.getObject("date", LocalDateTime.class))
-                            .clientId(resultSet.getInt("client_id"))
+                            .userId(resultSet.getInt("user_id"))
                             .bookingId(resultSet.getInt("booking_id"))
                             .build());
         }

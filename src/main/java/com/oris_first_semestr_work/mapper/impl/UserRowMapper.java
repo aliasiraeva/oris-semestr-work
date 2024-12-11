@@ -14,6 +14,7 @@ public class UserRowMapper implements RowMapper<User> {
         List<User> users = new ArrayList<>();
         while (resultSet.next()) {
             users.add(User.builder()
+                    .id(resultSet.getInt("id"))
                     .username(resultSet.getString("username"))
                     .password(resultSet.getString("password"))
                     .build());

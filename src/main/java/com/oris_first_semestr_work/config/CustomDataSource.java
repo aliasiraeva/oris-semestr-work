@@ -1,6 +1,4 @@
 package com.oris_first_semestr_work.config;
-
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -14,17 +12,16 @@ import java.util.logging.Logger;
 
 
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class CustomDataSource implements DataSource {
 
-    private String url;
-    private String username;
-    private String password;
+    private static final String URL = "jdbc:postgresql://localhost:5432/first_semestr_work_db";
+    private static final String USERNAME = "oris";
+    private static final String PASSWORD = "oris";
 
     @Override
     public Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(url, username, password);
+        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 
     @Override

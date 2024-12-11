@@ -1,7 +1,6 @@
 package com.oris_first_semestr_work.mapper.impl;
 
 import com.oris_first_semestr_work.entity.Pet;
-import com.oris_first_semestr_work.entity.User;
 import com.oris_first_semestr_work.mapper.RowMapper;
 
 import java.sql.ResultSet;
@@ -17,9 +16,9 @@ public class PetRowMapper implements RowMapper<Pet> {
             objects.add(
                     Pet.builder()
                             .id(resultSet.getInt("id"))
+                            .userId(resultSet.getInt("user_id"))
                             .name(resultSet.getString("name"))
-                            .type(resultSet.getString("type"))
-                            .subType(resultSet.getString("sub_type"))
+                            .breed(resultSet.getString("breed"))
                             .build());
         }
         return objects;
